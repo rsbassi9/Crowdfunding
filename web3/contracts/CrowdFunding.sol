@@ -59,5 +59,17 @@ contract CrowdFunding {
         return(campaigns[_id].donators, campaigns[_id].donations);
     }
 
-    function getCampaigns() {}
+// Create a nre variable allCampaigns which is type of array of multiple campaign structures. In this case
+// we are not actually getting campaigns, rather, we are just creating an empty array with as many empty elements as ther are actual cmapaigns.
+    function getCampaigns() public view returns (campaign[] memory) {
+        Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
+
+        for(uint i=0; i<numberOfCampaigns; i++) {
+            Campaign storage item = campaigns[i];
+
+// Fetch the specific campaign from storage and populating it strtaight to allCampaigns
+            allCampaigns[i] = item;
+    }
+
+    return allCampaigns;
 }
