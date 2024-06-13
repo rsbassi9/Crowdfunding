@@ -55,13 +55,13 @@ contract CrowdFunding {
     }
 
 // returns the array of addresses of donators, and the number of donations
-    function getDonators(uint256 _id view public return(address[] memory, uint256[] memory)) {
+    function getDonators(uint256 _id) public view returns(address[] memory, uint256[] memory) {
         return(campaigns[_id].donators, campaigns[_id].donations);
     }
 
 // Create a nre variable allCampaigns which is type of array of multiple campaign structures. In this case
 // we are not actually getting campaigns, rather, we are just creating an empty array with as many empty elements as ther are actual cmapaigns.
-    function getCampaigns() public view returns (campaign[] memory) {
+    function getCampaigns() public view returns (Campaign[] memory) {
         Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
 
         for(uint i=0; i<numberOfCampaigns; i++) {

@@ -1,4 +1,5 @@
 require("@matterlabs/hardhat-zksync-solc");
+require("dotenv").config(); // Load environment variables from .env file
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
