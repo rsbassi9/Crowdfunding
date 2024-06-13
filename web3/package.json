@@ -12,6 +12,9 @@
   "dependencies": {
     "@thirdweb-dev/contracts": "^3.15.0",
     "dotenv": "^16.4.5",
-    "zksync-web3": "^0.14.3"
+    "zksync-web3": "^0.14.3",
+    "react": "18.2.0",
+    "react-native": "0.74.2",
+    "thirdweb": "5.29.0"
   }
 }
